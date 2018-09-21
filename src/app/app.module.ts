@@ -1,7 +1,8 @@
+import { AuthGuard } from './common/authen-guard.service';
 import { AuthenService } from './service/authen.service';
 import { appRoutes } from './app.route';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRouteSnapshot } from '@angular/router';
 import { NgModule} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     UserComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { HomeComponent } from './home/home.component';
       appRoutes
     )
   ],
-  providers: [AuthenService],
+  providers: [AuthenService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
