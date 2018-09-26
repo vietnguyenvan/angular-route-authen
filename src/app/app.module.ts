@@ -1,3 +1,4 @@
+import { CategoryService } from './service/category.service';
 import { AuthGuard } from './common/authen-guard.service';
 import { AuthenService } from './service/authen.service';
 import { appRoutes } from './app.route';
@@ -39,7 +40,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
       appRoutes
     )
   ],
-  providers: [AuthenService, AuthGuard],
+  providers: [AuthenService, AuthGuard, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
