@@ -1,14 +1,16 @@
+import { ProductService } from './service/product.service';
 import { CategoryService } from './service/category.service';
 import { AuthGuard } from './common/authen-guard.service';
 import { AuthenService } from './service/authen.service';
 import { appRoutes } from './app.route';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule} from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { NgModule} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CustomFormsModule } from 'ng2-validation'
 import { FormsModule } from '@angular/forms';
+import {DataTableModule} from "angular-6-datatable";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -28,7 +30,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HomeComponent,
     LogoutComponent,
     ProductsComponent,
-    ProductDetailComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -36,11 +38,12 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     NgbModule,
     CustomFormsModule,
     FormsModule,
+    DataTableModule,
     RouterModule.forRoot(
       appRoutes
     )
   ],
-  providers: [AuthenService, AuthGuard, CategoryService],
+  providers: [AuthenService, AuthGuard, CategoryService, ProductService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
