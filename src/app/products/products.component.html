@@ -1,9 +1,9 @@
 <div class="container">
   <a class="btn btn-warning" routerLink="/product/new">New Product</a>
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search">
+    <input type="text" class="form-control" placeholder="Search" (keyup)="filter$.next($event.target.value)">
   </div>
-  <table class="table table-striped" [mfData]="products" #mf="mfDataTable" [mfRowsOnPage]="1">
+  <table class="table table-striped" [mfData]="products" #mf="mfDataTable" [mfRowsOnPage]="10">
       <thead>
       <tr>
           <th style="width: 5%">
@@ -15,7 +15,6 @@
               <mfDefaultSorter by="price">Price</mfDefaultSorter>
           </th>
           <th style="width: 30%">
-              <mfDefaultSorter by="price"></mfDefaultSorter>
           </th>
       </tr>
       </thead>
@@ -23,7 +22,7 @@
       <tr *ngFor="let item of mf.data; index as i">
           <td>{{i + 1}}</td>
           <td>{{item.title}}</td>
-          <td>{{item.price | currency: 'USD': true}}</td>
+          <td>{{item.price | currency: 'USD'}}</td>
           <td>
               <a [routerLink]="['/product', item.id]">Edit</a>
           </td>
@@ -32,7 +31,7 @@
       <tfoot>
       <tr>
           <td colspan="4">
-              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+              <mfBootstrapPaginator [rowsOnPageSet]="[10,20,30]"></mfBootstrapPaginator>
           </td>
       </tr>
       </tfoot>
