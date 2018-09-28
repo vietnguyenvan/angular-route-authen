@@ -25,7 +25,7 @@
                 <input type="text" class="form-control" id="imageUrl" [(ngModel)]="product.imageUrl" required name="imageUrl">
             </div>
             <button type="submit" class="btn btn-success" [disabled]="f.form.invalid">Save</button>
-            <button type="button" class="btn btn-secondary" routerLink="/products">Cancel</button>
+            <button type="button" class="btn btn-secondary" routerLink="/admin/products">Cancel</button>
             <div>{{category.error}}</div>
         </form>
     </div>
@@ -34,7 +34,7 @@
             <img class="card-img-top" [attr.src]="product.imageUrl" alt="Card image cap">
             <div class="card-body">
                 <h4 class="card-title">{{product.title}}</h4>
-                <span class="card-text">{{product.price | currency: 'USD': true}}</span>
+                <span class="card-text">{{product.price | currency: 'USD'}}</span>
             </div>
         </div>
     </div>

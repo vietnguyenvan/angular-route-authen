@@ -1,5 +1,5 @@
 <div class="container">
-  <a class="btn btn-warning" routerLink="/product/new">New Product</a>
+  <a class="btn btn-warning" routerLink="/admin/product/new">New Product</a>
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Search" (keyup)="filter$.next($event.target.value)">
   </div>
@@ -24,7 +24,7 @@
           <td>{{item.title}}</td>
           <td>{{item.price | currency: 'USD'}}</td>
           <td>
-              <a [routerLink]="['/product', item.id]">Edit</a>
+              <a [routerLink]="['/admin/product', item.id]">Edit</a>
           </td>
       </tr>
       </tbody>

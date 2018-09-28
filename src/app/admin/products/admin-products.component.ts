@@ -1,15 +1,15 @@
-import { ProductService } from './../service/product.service';
+import { ProductService } from '../../service/product.service';
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../model/product';
+import { Product } from '../../model/product';
 import { Subject, Observable, of } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  templateUrl: './admin-products.component.html',
+  styleUrls: ['./admin-products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class AdminProductsComponent implements OnInit {
 
   products: Product[] = [];
   query: string = "";

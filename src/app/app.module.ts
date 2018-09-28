@@ -18,8 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AdminProductsComponent } from './admin/products/admin-products.component';
+import { ProductDetailComponent } from './admin/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     UserComponent,
     HomeComponent,
     LogoutComponent,
-    ProductsComponent,
+    AdminProductsComponent,
     ProductDetailComponent
   ],
   imports: [

@@ -1,8 +1,8 @@
-import { ProductService } from './../service/product.service';
-import { ICategory } from './../model/category';
-import { CategoryService } from './../service/category.service';
+import { ProductService } from '../../service/product.service';
+import { ICategory } from '../../model/category';
+import { CategoryService } from '../../service/category.service';
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../model/product';
+import { Product } from '../../model/product';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
