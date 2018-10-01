@@ -4,6 +4,7 @@ import { ProductService } from '../service/product.service';
 import { Product } from '../model/product';
 import { map, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { ICategory } from '../model/category';
 
 @Component({
   selector: 'app-product',
@@ -13,6 +14,7 @@ import { Observable } from 'rxjs';
 export class ProductComponent implements OnInit {
 
   category$: Observable<string>;
+  categoryName: string;
   products: Product[] = []
   
   constructor(private _prodService: ProductService, private route: ActivatedRoute) { }
@@ -21,6 +23,7 @@ export class ProductComponent implements OnInit {
     this.category$ = this.route.queryParams.pipe(map(param => param.category));
 
     this.category$.pipe(switchMap(category => {
+      this.categoryName = category;
       return this._prodService.filterProductByCategory(category)
     })).subscribe(prods => {
       this.products = prods;

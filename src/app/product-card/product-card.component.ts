@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductCardComponent{
 
   @Input('product') product:Product;
+  @Input('showAction')showAction:boolean = true;
 
   constructor() { 
     

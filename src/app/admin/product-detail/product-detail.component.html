@@ -16,8 +16,8 @@
             </div>
             <div class="form-group">
                 <label for="category">Category</label>
-                <select class="custom-select" id="category" #category="ngModel" [(ngModel)]="product.categoryId" required name="category">
-                    <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                <select class="custom-select" id="category" #category="ngModel" [(ngModel)]="product.category" required name="category">
+                    <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
                 </select>
             </div>
             <div class="form-group">
@@ -30,6 +30,6 @@
         </form>
     </div>
     <div class="col-md-6">
-        <product-card [product]="product"></product-card>
+        <product-card [product]="product" [showAction]="false"></product-card>
     </div>
 </div>

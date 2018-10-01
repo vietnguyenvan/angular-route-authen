@@ -1,5 +1,8 @@
 <ul class="list-group">
-  <a class="list-group-item list-group-item-action" *ngFor="let category of categories" routerLink="/" [queryParams]="{category: category.name}">
+    <a class="list-group-item list-group-item-action" routerLink="/" [class.active]="!categoryName">
+      All categories
+    </a>
+  <a class="list-group-item list-group-item-action" *ngFor="let category of categories" routerLink="/" [queryParams]="{category: category.name}" [class.active]="category.name === categoryName">
     {{category.name}}
   </a>
 </ul>
