@@ -3,14 +3,13 @@ import { AuthGuard } from './common/authen-guard.service';
 import { Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 import { AdminProductsComponent } from './admin/products/admin-products.component';
+import { ProductComponent } from './product/product.component';
 
  export const appRoutes:Routes = [
-    {path: "home", component: HomeComponent},
+    {path: "", component: ProductComponent},
     {path: "login", component: LoginComponent},
     {path: "user", component: UserComponent, canActivate: [AuthGuard]},
     {path: "admin/products", component: AdminProductsComponent, canActivate: [AuthGuard]},
     {path: "admin/product/:id", component: ProductDetailComponent, canActivate: [AuthGuard]},
-    {path: "", redirectTo: "home", pathMatch: "full"},
  ]

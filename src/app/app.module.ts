@@ -16,10 +16,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
-import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdminProductsComponent } from './admin/products/admin-products.component';
 import { ProductDetailComponent } from './admin/product-detail/product-detail.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductComponent } from './product/product.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { ProductDetailComponent } from './admin/product-detail/product-detail.co
     NavbarComponent,
     LoginComponent,
     UserComponent,
-    HomeComponent,
     LogoutComponent,
     AdminProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductCardComponent,
+    ProductComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

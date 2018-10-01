@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit {
 
     onSubmit() {
         this._prodService.save(this.product);
-        this.router.navigateByUrl("/products");
+        this.router.navigateByUrl("/admin/products");
 
     }
 
