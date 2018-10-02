@@ -27,7 +27,6 @@ export class ProductComponent implements OnInit {
       return this._prodService.filterProductByCategory(category)
     })).subscribe(prods => {
       this.products = prods;
-      console.log(prods);
     });
   }
 

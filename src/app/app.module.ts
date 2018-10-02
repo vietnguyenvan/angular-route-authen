@@ -1,30 +1,27 @@
-import { CoreModule } from './core/core.module';
-import { ProductService } from './service/product.service';
-import { CategoryService } from './service/category.service';
-import { appRoutes } from './app.route';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { NgModule} from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { CustomFormsModule } from 'ng2-validation'
-import { FormsModule } from '@angular/forms';
-import {DataTableModule} from "angular-6-datatable";
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { CoreModule } from './core/core.module';
+import { AdminModule } from './admin/admin.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
-import { AdminProductsComponent } from './admin/products/admin-products.component';
-import { ProductDetailComponent } from './admin/product-detail/product-detail.component';
-import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
+
+import { ProductService } from './service/product.service';
+import { CategoryService } from './service/category.service';
+import { DataTableModule } from 'angular-6-datatable';
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    AdminProductsComponent,
-    ProductDetailComponent,
-    ProductCardComponent,
     ProductComponent,
     CategoryComponent
   ],
@@ -34,10 +31,10 @@ import { CategoryComponent } from './category/category.component';
     CustomFormsModule,
     FormsModule,
     DataTableModule,
+    SharedModule,
     CoreModule,
-    RouterModule.forRoot(
-      appRoutes
-    )
+    AppRoutingModule,
+    AdminModule
   ],
   providers: [ CategoryService, ProductService],
   bootstrap: [AppComponent]
