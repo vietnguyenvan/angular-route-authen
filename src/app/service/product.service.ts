@@ -31,9 +31,14 @@ export class ProductService {
 
     save(product: Product): void {
         let index = products.findIndex(prod => prod.id === product.id);
-        products.splice(index, 1, product);
-        console.log("update success");
+        if (index != 0) {
+            product.id = products.length + 1;
+            products.push(product);
+        } else {
+            products.splice(index, 1, product);
+        }
         
+        console.log("update success");
     }
 }
 

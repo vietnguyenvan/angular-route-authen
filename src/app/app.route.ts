@@ -1,8 +1,8 @@
 import { ProductDetailComponent } from './admin/product-detail/product-detail.component';
-import { AuthGuard } from './common/authen-guard.service';
+import { AuthGuard } from './core/authen-guard.service';
 import { Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './core/login/login.component';
 import { AdminProductsComponent } from './admin/products/admin-products.component';
 import { ProductComponent } from './product/product.component';
 

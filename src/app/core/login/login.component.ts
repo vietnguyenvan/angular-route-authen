@@ -1,4 +1,4 @@
-import { AuthenService } from '../service/authen.service';
+import { AuthenService } from '../authen.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 

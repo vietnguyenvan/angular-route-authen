@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenService } from 'src/app/service/authen.service';
+import { AuthenService } from '../authen.service';
 
 @Component({
   selector: 'nav-bar',
