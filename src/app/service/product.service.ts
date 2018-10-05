@@ -40,6 +40,7 @@ export class ProductService {
         
         console.log("update success");
     }
+
 }
 
 export const products: Product[] = [

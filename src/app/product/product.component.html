@@ -2,7 +2,7 @@
     <div class="col-md-3"><category [category]="categoryName"></category ></div>
     <div class="col-md-9">
         <div class="row">
-            <product-card *ngFor="let prod of products" [product]="prod" class="col-md-6"></product-card>
+            <product-card *ngFor="let prod of products" [product]="prod" class="col-md-6" [shopping-cart]="cart"></product-card>
         </div>
     </div>
 </div>

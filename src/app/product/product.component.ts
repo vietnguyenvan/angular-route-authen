@@ -4,7 +4,8 @@ import { ProductService } from '../service/product.service';
 import { Product } from '../model/product';
 import { map, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { ICategory } from '../model/category';
+import { ShoppingCartService } from '../shopping-cart.service';
+import { ICart } from '../model/cart';
 
 @Component({
   selector: 'app-product',
@@ -15,12 +16,16 @@ export class ProductComponent implements OnInit {
 
   category$: Observable<string>;
   categoryName: string;
-  products: Product[] = []
+  products: Product[] = [];
+  cart: ICart;
   
-  constructor(private _prodService: ProductService, private route: ActivatedRoute) { }
+  constructor(private _prodService: ProductService,
+    private _cartService: ShoppingCartService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.category$ = this.route.queryParams.pipe(map(param => param.category));
+    this.cart = this._cartService.getCart();
 
     this.category$.pipe(switchMap(category => {
       this.categoryName = category;
